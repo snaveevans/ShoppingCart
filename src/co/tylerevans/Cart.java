@@ -9,13 +9,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns= {"/ControllerServlet", "/", "/home"})
-public class ControllerServlet extends HttpServlet {
+@WebServlet("/Cart")
+public class Cart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
+		
+		String action = (String) request.getAttribute("action");
+		
+		if(action==null)
+			action = "view";
+		
+		switch(action)
+		{
+		case "addToCart":
+			
+			break;
+		case "emptyCart":
+			
+			break;
+		}
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/Cart.jsp");
 		dispatcher.forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

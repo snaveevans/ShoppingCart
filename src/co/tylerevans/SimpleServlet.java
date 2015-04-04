@@ -7,27 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/home")
 public class SimpleServlet extends HttpServlet {
 	String appName = "My Application";
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		String name = req.getParameter("name");
-		if(name != null)
-			resp.getWriter().write("Hello " + name);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = request.getParameter("action");
+		if(action != null)
+			response.getWriter().write("Hello " + action);
 		else
-			resp.getWriter().write("Please enter a name value");
+			response.getWriter().write("Please enter a name value");
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		String name = req.getParameter("name");
-		if(name != null && name != "")
-			resp.getWriter().write("Hello " + name);
-		else
-			throw new ServletException("A Name should be Entered");
+		
 	}
 }

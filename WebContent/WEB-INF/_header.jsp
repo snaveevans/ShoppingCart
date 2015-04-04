@@ -17,9 +17,9 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Cart</a></li>
+        <li class="active"><a href="home">Home</a></li>
+        <li><a href="Products">Products</a></li>
+        <li><a href="Cart">Cart</a></li>
       </ul>
     </div>
   </div>
